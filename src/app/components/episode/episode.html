@@ -1,1 +1,14 @@
-<p>episode works!</p>
+<!-- Componente padre -->
+ <!-- Se usa el decorador for para recorrer los personajes -->
+<div class="p-6 grid w-full grid-cols-1 md:grid-cols-3 gap-6">
+    @for(episo of episodes; track episo.id){
+    <div class="bg-[oklch(20.8%_0.042_265.755)] rounded-xl shadow-lg overflow-hidden border p-4 hover:shadow-[0_0_25px_-5px_oklch(89.7%_0.196_126.665)] hover:-translate-y-1">
+        <div class="text-center mt-4">
+            <h2 class="text-xl font-bold text-[oklch(76.8%_0.233_130.85)]">{{episo.name}}</h2>
+            <p class="mt-2 text-white">Estado: {{episo.air_date}}</p>
+            <p class="mt-2 text-white">Género: {{episo.episode}}</p>
+        </div>
+
+    </div>
+    }
+</div>

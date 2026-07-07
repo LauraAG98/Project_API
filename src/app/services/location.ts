@@ -1,8 +1,26 @@
 import { Injectable } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
-export class Location {
-  
+export class LocationService {
+  //Se inyecta la dependencia
+  constructor (private http: HttpClient){}
+
+  //Método que permite mostrar todos los episodios
+  getLocations(page: number = 1){
+    return this.http.get(`${environment.apiUrl}/location?page=${page}`)
+  }
+
+  //Método que permite elegir un solo episodio a través del id
+  getLocationById(id: number){
+    return this.http.get(`${environment.apiUrl}/location/${id}`)
+  }
+
+  //Método que permite elegir varios episodios a través de id's
+  getMultipleLocations(ids: number []){
+    return this.http.get(`${environment.apiUrl}/location?ids=${ids.join(",")}`)
+  }
 }
