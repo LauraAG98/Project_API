@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { LocationService } from '../../services/location';
+import { LocationInterface } from '../../models/location.interface';
 
 @Component({
   selector: 'app-location',
@@ -9,14 +10,14 @@ import { LocationService } from '../../services/location';
 })
 export class Location {
   //Se crea variable para guardar la información
-  locations: any [] = []
+  locations: LocationInterface [] = []
 
   //Se inyecta el servicio
   constructor(private location: LocationService) { }
 
   //Método que permite obtener ubicaciones
   ngOnInit() {
-    this.location.getLocations().subscribe((res: any) => {
+    this.location.getLocations().subscribe((res) => {
       this.locations = res.results 
     })
   }

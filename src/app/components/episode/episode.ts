@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { EpisodeService } from '../../services/episode';
+import { EpisodeInterface } from '../../models/episode.interface';
 
 @Component({
   selector: 'app-episode',
@@ -9,14 +10,14 @@ import { EpisodeService } from '../../services/episode';
 })
 export class Episode {
   //Se crea variable para guardar la información
-  episodes: any [] = []
+  episodes: EpisodeInterface [] = []
   
   //Se inyecta el servicio
   constructor (private episodeService: EpisodeService) {}
 
   //Método que permite obtener los episodios.
   ngOnInit(){
-    this.episodeService.getEpisodes().subscribe((res: any) =>{
+    this.episodeService.getEpisodes().subscribe((res) =>{
       this.episodes = res.results
     })
   }

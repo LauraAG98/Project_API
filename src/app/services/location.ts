@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient } from '@angular/common/http';
+import { ResponseAPI } from '../models/respondeAPI.interface';
+import { LocationInterface } from '../models/location.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +13,7 @@ export class LocationService {
 
   //Método que permite mostrar todos los episodios
   getLocations(page: number = 1){
-    return this.http.get(`${environment.apiUrl}/location?page=${page}`)
+    return this.http.get<ResponseAPI<LocationInterface>>(`${environment.apiUrl}/location?page=${page}`)
   }
 
   //Método que permite elegir un solo episodio a través del id

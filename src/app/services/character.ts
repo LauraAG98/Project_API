@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { ResponseAPI } from '../models/respondeAPI.interface';
+import { CharacterInterface } from '../models/character.interface';
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +14,7 @@ export class CharacterService {
   
   //Método para obtener paginación
   getCharacters(page: number = 1) {
-    return this.http.get(`${environment.apiUrl}/character?page=${page}`); 
+    return this.http.get<ResponseAPI<CharacterInterface>>(`${environment.apiUrl}/character?page=${page}`); 
   }
 
   //Método para obtener personaje por id
