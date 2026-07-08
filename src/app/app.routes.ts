@@ -1,7 +1,7 @@
 import { Routes } from '@angular/router';
 import { Character } from './components/character/character';
 import { Episode } from './components/episode/episode';
-import { Location } from '@angular/common';
+import { Location } from './components/location/location';
 import { Nav } from './shared/nav/nav';
 
 export const routes: Routes = [
@@ -11,4 +11,5 @@ export const routes: Routes = [
 { path: ':page', component: Character },
 { path: 'app-nav', component: Nav },
 { path: 'app-episode/:page', component: Episode},
+{ path: 'app-location/:page', component: Location},
 ];

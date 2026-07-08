@@ -11,18 +11,18 @@ export class LocationService {
   //Se inyecta la dependencia
   constructor (private http: HttpClient){}
 
-  //Método que permite mostrar todos los episodios
+  //Método que permite mostrar todas las ubicaciones
   getLocations(page: number = 1){
     return this.http.get<ResponseAPI<LocationInterface>>(`${environment.apiUrl}/location?page=${page}`)
   }
 
-  //Método que permite elegir un solo episodio a través del id
+  //Método que permite elegir un solo una ubicación a través del id
   getLocationById(id: number){
-    return this.http.get(`${environment.apiUrl}/location/${id}`)
+    return this.http.get<LocationInterface>(`${environment.apiUrl}/location/${id}`)
   }
 
-  //Método que permite elegir varios episodios a través de id's
+  //Método que permite elegir varias ubicaciones a través de id's
   getMultipleLocations(ids: number []){
-    return this.http.get(`${environment.apiUrl}/location?ids=${ids.join(",")}`)
+    return this.http.get<LocationInterface[]>(`${environment.apiUrl}/location/${ids.join(",")}`)
   }
 }
