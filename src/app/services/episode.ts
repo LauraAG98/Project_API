@@ -21,8 +21,8 @@ export class EpisodeService {
     return this.http.get<EpisodeInterface>(`${environment.apiUrl}/episode/${id}`)
   }
 
-  //Método que permite elegir varios episodios a través de id's
-  getMultipleEpisodes(ids: number[]) {
-    return this.http.get<ResponseAPI<EpisodeInterface>>(`${environment.apiUrl}/episode?${ids.join(",")}`)
-  }
+  //Método para obtener episodio por nombre
+    getEpisodeByName(name: string) {
+      return this.http.get<ResponseAPI<EpisodeInterface>>(`${environment.apiUrl}/episode?name=${name}`)
+    }
 }
