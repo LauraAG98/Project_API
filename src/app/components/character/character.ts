@@ -15,8 +15,6 @@ export class Character {
   //Variables
   page: number = 1;
   search: string = '';
-  status: string = '';
-  gender: string = '';
 
   //Se inyecta el servicio
   constructor(private characterService: CharacterService,
@@ -56,9 +54,9 @@ export class Character {
   previouspage() {
     if (this.page > 1) {
       if (this.page === 2) {
-        this.router.navigate(['']);
+        this.router.navigate(['app-character']);
       } else {
-        this.router.navigate([this.page - 1])
+        this.router.navigate(['app-character',this.page - 1])
       }
     }
   }

@@ -1,0 +1,43 @@
+<!-- Componente padre -->
+<!-- Componente que contiene inputs -->
+<div class="bg-[oklch(12.9%_0.042_264.695)] min-h-screen bg-[#0B1F3A] flex items-center justify-center">
+    <div class="w-full max-w-md bg-[#5DA9E9] rounded-3xl shadow-2xl p-10 bg-[oklch(20.8%_0.042_265.755)]">
+        <h1 class="text-[oklch(76.8%_0.233_130.85)] text-4xl font-bold text-center mb-8 ">
+            Login
+        </h1>
+
+        <div class="mb-5">
+            <label class="text-[oklch(76.8%_0.233_130.85)] block mb-2">
+                Usuario
+            </label>
+
+            <input type="text" class="w-full rounded-lg p-3 bg-white outline-none" placeholder="User">
+        </div>
+
+        <div class="mb-8 relative">
+            <label class="text-[oklch(76.8%_0.233_130.85)] block mb-2">
+                Contraseña
+            </label>
+
+            <!-- Texto que se oculta -->
+            <input [type]="showPassword ? 'text' : 'password'" class="w-full rounded-lg p-3 pr-12 bg-white outline-none"
+                placeholder="Password">
+
+            <!-- Imagenes que determinan si se muestra o no la contraseña -->
+            <button type="button" (click)="togglePassword()"
+                class="cursor-pointer absolute right-3 top-[45px] text-xl ">
+                <img [src]="showPassword
+            ? 'images/ojo-abierto.png'
+            : 'images/ojo-cerrado.png'" alt="Mostrar u ocultar contraseña" class="w-6 h-6">
+            </button>
+        </div>
+
+        <!-- Botón que redirige a la siguiente vista -->
+        <button
+            class="cursor-pointer w-full bg-[#0B1F3A] bg-[oklch(60.8%_0.233_130.85)] text-white p-3 rounded-lg hover:bg-[oklch(76.8%_0.233_130.85)] transition font-bold"
+            routerLink="/app-character">
+            Iniciar sesión
+        </button>
+
+    </div>
+</div>

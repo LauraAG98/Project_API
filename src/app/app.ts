@@ -1,5 +1,5 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { Nav } from "./shared/nav/nav";
 
 @Component({
@@ -10,4 +10,12 @@ import { Nav } from "./shared/nav/nav";
 })
 export class App {
   protected readonly title = signal('proyectAPI');
+
+  //Se Inyecta servicio
+  constructor (private router: Router) {}
+
+  //Indica si el componente se debe mostrar
+  get showNav(): boolean{
+    return this.router.url !== '/';
+  }
 }
