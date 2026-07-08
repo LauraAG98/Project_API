@@ -4,6 +4,7 @@ import { CharacterInterface } from '../../models/character.interface';
 import { InfoInterface } from '../../models/info.Interface';
 import { ActivatedRoute, Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'
+import { Nav } from '../../shared/nav/nav';
 
 @Component({
   selector: 'app-character',

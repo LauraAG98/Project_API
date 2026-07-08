@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { ResponseAPI } from '../models/respondeAPI.interface';
-import { CharacterInterface } from '../models/character.interface';
 import { EpisodeInterface } from '../models/episode.interface';
 
 @Injectable({
@@ -19,11 +18,11 @@ export class EpisodeService {
 
   //Método que permite elegir un solo episodio a través del id
   getEpisodeById(id: number) {
-    return this.http.get(`${environment.apiUrl}/episode/${id}`)
+    return this.http.get<EpisodeInterface>(`${environment.apiUrl}/episode/${id}`)
   }
 
   //Método que permite elegir varios episodios a través de id's
   getMultipleEpisodes(ids: number[]) {
-    return this.http.get(`${environment.apiUrl}/episode?${ids.join(",")}`)
+    return this.http.get<ResponseAPI<EpisodeInterface>>(`${environment.apiUrl}/episode?${ids.join(",")}`)
   }
 }
