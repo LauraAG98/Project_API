@@ -19,21 +19,21 @@ export class CharacterService {
 
   //Método para obtener personaje por id
   getCharacterById(id: number) {
-    return this.http.get(`${environment.apiUrl}/character/${id}`);
+    return this.http.get<CharacterInterface>(`${environment.apiUrl}/character/${id}`);
   }
 
   //Método para obtener personaje por nombre
   getCharacterByName(name: string) {
-    return this.http.get(`${environment.apiUrl}/character?name=${name}`)
+    return this.http.get<ResponseAPI<CharacterInterface>>(`${environment.apiUrl}/character?name=${name}`)
   }
 
   //Método para obtener personaje por estado
   getCharacterByStatus(status: string) {
-    return this.http.get(`${environment.apiUrl}/character?status=${status}`)
+    return this.http.get<ResponseAPI<CharacterInterface>>(`${environment.apiUrl}/character?status=${status}`)
   }
 
   //Método para obtener por género
   getCharacterByGender(gender: string) {
-    return this.http.get(`${environment.apiUrl}/character?gender=${gender}`) 
+    return this.http.get<ResponseAPI<CharacterInterface>>(`${environment.apiUrl}/character?gender=${gender}`) 
   }
 }

@@ -1,6 +1,11 @@
 <!-- Componente padre -->
 <!-- Se usa el decorador for para recorrer los personajes -->
 <h1 class="text-3xl font-bold text-[oklch(76.8%_0.233_130.85)] px-8 py-8">Personajes</h1>
+<div class="flex gap-6 pl-8">
+    <input class=" border border-gray-700 rounded bg-white pl-1  w-98" type="text" [(ngModel)]="search">
+    <button (click)="searchInformation()" class="text-white bg-[oklch(76.8%_0.233_130.85)] px-6 py-2 rounded-lg font-bold hover:opacity-80">Buscar</button>
+</div>
+
 <div class="p-6 grid w-full grid-cols-1 md:grid-cols-3 gap-6">
     @for(charac of characters; track charac.id){
     <div
