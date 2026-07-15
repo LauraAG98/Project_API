@@ -61,6 +61,7 @@ export class Location {
     }
   }
 
+  //Método que realiza peticion a service para obtener ubicación
   searchInformation(){
     if(this.search === ''){
       this.loadLocation();

@@ -18,8 +18,8 @@ export class Character {
 
   //Se inyecta el servicio
   constructor(private characterService: CharacterService,
-    private route: ActivatedRoute,
-    private router: Router
+    private route: ActivatedRoute, //Permite leer la ruta
+    private router: Router //Permite cambiar de ruta
   ) { }
 
   //Se crea variable para guardar la información

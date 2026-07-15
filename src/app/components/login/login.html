@@ -11,7 +11,7 @@
                 Usuario
             </label>
 
-            <input type="text" class="w-full rounded-lg p-3 bg-white outline-none" placeholder="User">
+            <input [(ngModel)]="user" type="text" class="w-full rounded-lg p-3 bg-white outline-none" placeholder="User">
         </div>
 
         <div class="mb-8 relative">
@@ -35,7 +35,7 @@
         <!-- Botón que redirige a la siguiente vista -->
         <button
             class="cursor-pointer w-full bg-[#0B1F3A] bg-[oklch(60.8%_0.233_130.85)] text-white p-3 rounded-lg hover:bg-[oklch(76.8%_0.233_130.85)] transition font-bold"
-            routerLink="/app-character">
+            (click)="login()">
             Iniciar sesión
         </button>
 

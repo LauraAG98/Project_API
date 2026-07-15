@@ -1,13 +1,15 @@
 <!-- Componente padre -->
- <!-- Se usa el decorador for para recorrer los personajes -->
+<!-- Se usa el decorador for para recorrer los personajes -->
 <h1 class="text-3xl font-bold text-[oklch(76.8%_0.233_130.85)] px-8 py-8">Episodios</h1>
 <div class="flex gap-6 pl-8">
     <input class=" border border-gray-700 rounded bg-white pl-1  w-98" type="text" [(ngModel)]="search">
-    <button (click)="searchInformation()" class="text-white bg-[oklch(76.8%_0.233_130.85)] px-6 py-2 rounded-lg font-bold hover:opacity-80">Buscar</button>
+    <button (click)="searchInformation()"
+        class="text-white bg-[oklch(76.8%_0.233_130.85)] px-6 py-2 rounded-lg font-bold hover:opacity-80">Buscar</button>
 </div>
 <div class="p-6 grid w-full grid-cols-1 md:grid-cols-3 gap-6">
     @for(episo of episodes; track episo.id){
-    <div class="bg-[oklch(20.8%_0.042_265.755)] rounded-xl shadow-lg overflow-hidden border p-4 hover:shadow-[0_0_25px_-5px_oklch(89.7%_0.196_126.665)] hover:-translate-y-1">
+    <div
+        class="bg-[oklch(20.8%_0.042_265.755)] rounded-xl shadow-lg overflow-hidden border p-4 hover:shadow-[0_0_25px_-5px_oklch(89.7%_0.196_126.665)] hover:-translate-y-1">
         <div class="text-center mt-4">
             <h2 class="text-xl font-bold text-[oklch(76.8%_0.233_130.85)]">{{episo.name}}</h2>
             <p class="mt-2 text-white">Fecha emisión: {{episo.air_date}}</p>

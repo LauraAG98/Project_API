@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 import { LoginService } from '../../services/login'
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms'
 
 @Component({
   selector: 'app-login',
-  imports: [FormsModule, RouterLink],
+  imports: [FormsModule],
   templateUrl: './login.html',
   styleUrl: './login.css',
 })
@@ -20,7 +20,7 @@ export class Login {
   //Método que redirige a la siguiente vista
   login(){
     this.loginService.login(this.user);
-    this.router.navigate(['/']);
+    this.router.navigate(['/app-character']);
   }
 
   //Booleano que indica que el texto inicialmente no se ve

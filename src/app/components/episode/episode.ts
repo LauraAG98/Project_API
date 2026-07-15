@@ -61,7 +61,7 @@ export class Episode {
     }
   }
 
-  //Se agrega condición para determinar que busca el usuario y que se debe mostrar
+  //Se agrega condición para determinar qué busca el usuario y que se debe mostrar
   searchInformation() {
     if (this.search === '') {
       this.loadEpisodes();
