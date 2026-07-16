@@ -1,0 +1,10 @@
+<!-- Condición que suscribe al servicio para escuchar el estado de carga  -->
+@if(loading$ | async){
+<!-- Contenedor padre -->
+ <!-- Imagen que se muestra mienstra carga la información -->
+<div
+    class="fixed inset-0 bg-black/50 backdrop-blur-sm flex flex-col justify-center items-center gap-3">
+    <img class="w-34 h-auto" src="/images/RickMortyLoading.png" alt="">
+    <p class="text-white italic">Cargando...</p>
+</div>
+}
