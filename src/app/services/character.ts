@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment';
+import { environment } from '../../environments/environment.development';
 import { ResponseAPI } from '../models/respondeAPI.interface';
 import { CharacterInterface } from '../models/character.interface';
 

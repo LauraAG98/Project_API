@@ -15,7 +15,7 @@ export class App {
   constructor (private router: Router) {}
 
   //Indica si el componente se debe mostrar
-  get showNav(): boolean{
+  showNav(): boolean{
     return this.router.url !== '/';
   }
 }
