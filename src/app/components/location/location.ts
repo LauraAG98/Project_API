@@ -67,7 +67,7 @@ export class Location {
       this.loadLocation();
     } else if(this.search.includes(',')){
 
-      const ids = this.search.split(',').map(Number);
+      const ids = this.search.split(',');
       
       this.locationService.getMultipleLocations(ids).subscribe((res) => {
         this.locations = res;

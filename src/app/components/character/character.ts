@@ -46,7 +46,7 @@ export class Character {
   //Método que muestra los personajes de la siguiente página
   nextPage() {
     if (this.info && this.page < this.info.pages) {
-      this.router.navigate([this.page + 1])
+      this.router.navigate(['app-character',this.page + 1])
     }
   }
 

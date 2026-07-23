@@ -22,7 +22,7 @@ export class LocationService {
   }
 
   //Método que permite elegir varias ubicaciones a través de id's
-  getMultipleLocations(ids: number []){
-    return this.http.get<LocationInterface[]>(`${environment.apiUrl}/location/${ids.join(",")}`)
+  getMultipleLocations(ids: string []){
+    return this.http.get<LocationInterface[]>(`${environment.apiUrl}/location/multiple/${ids.join(",")}`)
   }
 }
